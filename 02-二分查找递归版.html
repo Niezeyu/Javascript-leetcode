@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var binarySearch = function(arr, item){
+      if(arr.length == 0) {
+        return false;
+      }else {
+        var midpotion = parseInt(arr.length / 2);
+        if(arr[midpotion] == item) { 
+          return true;
+        }else {
+          if(item < arr[midpotion]) {
+            return binarySearch(arr.slice(0, midpotion), item)
+          }else {
+            return binarySearch(arr.slice(midpotion + 1), item)
+          }
+        }
+      }
+    }
+    var arr = [17, 23, 35, 44, 58, 69, 77, 82, 99];
+    var newArr = arr ;
+    var item = 90;
+    console.log(binarySearch(arr, item));
+  </script>
+</body>
+</html>
